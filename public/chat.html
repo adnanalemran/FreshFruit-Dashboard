@@ -16,25 +16,12 @@
       />
       <link rel="stylesheet" href="css/style.css" />
       <title>Chat Application by Adnan</title>
-      <script src="https://cdn.tailwindcss.com"></script>
-      <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
-      <script>
-         tailwind.config = {
-           theme: {
-             extend: {
-               colors: {
-                 clifford: '#da373d',
-               }
-             }
-           }
-         }
-       </script>
    </head>
-   <body class="bg-gradient-to-r from-red-600 to-black">
+   <body>
       <div class="chat-container">
          <header class="chat-header">
             <h1 style="color: #f5f6f7">
-               <i class="fas fa-comment-dots"></i> ChatApp
+               <i class="fas fa-comment-dots"></i> onChat
             </h1>
             <a href="index.html" class="btn">Leave Room</a>
          </header>
@@ -56,21 +43,7 @@
                   required
                   autocomplete="off"
                />
-               <button
-                  style="
-                     cursor: pointer;
-                     padding: 10px 30px;
-                     border: none;
-                     border-radius: 5px;
-                     background: #b1d8eb;
-                     color: #3f5163;
-                     border: none;
-                     border-radius: 25px;
-                     font-size: 17px;
-                     margin-left: 20px;
-                  "
-                  class="btn"
-               >
+               <button class="btn send-button">
                   <i class="fas fa-paper-plane"></i> Send
                </button>
             </form>
@@ -79,7 +52,7 @@
 
       <footer style="margin-top: 25px">
          <div style="text-align: center; color: #f5f6f7" class="credit">
-            &copy; Adnan al-Emran
+            &copy; Adnan al-emran
          </div>
       </footer>
 

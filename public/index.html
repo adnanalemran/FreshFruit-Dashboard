@@ -15,53 +15,46 @@
          integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
          crossorigin="anonymous"
       />
-
       <link rel="stylesheet" href="css/style.css" />
-      <script src="https://cdn.tailwindcss.com"></script>
-      <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
-      <script>
-         tailwind.config = {
-           theme: {
-             extend: {
-               colors: {
-                 clifford: '#da373d',
-               }
-             }
-           }
-         }
-       </script>
       <title>Chat Application by Adnan</title>
    </head>
-   <body class="bg-gradient-to-r from-red-600 to-black">
-      <div class="min-w-lg mx-auto flex justify-center items-center h-screen">
-          <div class="bg-gray-800 bg-opacity-70 p-6 rounded-lg shadow-lg lg:w-[50%] w-[90%] ">
-              <header class="text-center">
-                  <h1 class="text-3xl text-white"><i class="fas fa-comment-dots"></i> onChat</h1>
-              </header>
-              <main class="mt-6">
-                  <form action="chat.html" class="space-y-4">
-                      <div>
-                          <label for="username" class="block text-white">Username (Any Name)</label>
-                          <input type="text" name="username" id="username" placeholder="Enter username..." class="w-full px-4 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-violet-600 focus:border-transparent">
-                      </div>
-                      <div>
-                          <label for="room" class="block text-white">Room</label>
-                          <select name="room" id="room" class="w-full px-4 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent">
-                              <option value="Room 1">Room 1</option>
-                              <option value="Room 2">Room 2</option>
-                              <option value="Room 3">Room 3</option>
-                              <option value="Room 4">Room 4</option>
-                              <option value="DEV Room">DEV Room</option>
-                              <option value="Opera 1.O">Opera 1.O</option>
-                          </select>
-                      </div>
-                      <button type="submit" class="w-full bg-violet-600 hover:bg-violet-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-violet-600 focus:ring-opacity-50">Join Chat</button>
-                  </form>
-              </main>
-              <footer class="mt-6 text-center text-gray-400">
-                  &copy; Adnan al-Emran
-              </footer>
-          </div>
+   <body>
+      <div class="join-container">
+         <header class="join-header">
+            <h1 style="color: #f5f6f7">
+               <i class="fas fa-comment-dots"></i> onChat
+            </h1>
+         </header>
+         <main class="join-main">
+            <form action="chat.html">
+               <div class="form-control">
+                  <label style="color: #f5f6f7" for="username">Username</label>
+                  <input
+                     type="text"
+                     name="username"
+                     id="username"
+                     placeholder="Enter username..."
+                     required
+                  />
+               </div>
+               <div class="form-control">
+                  <label style="color: #f5f6f7" for="room">Select Room</label>
+                  <select name="room" id="room">
+                     <option value="Room-1">Room-1</option>
+                     <option value="Room-2">Room-2</option>
+                     <option value="Room-3">Room-3</option>
+                     <option value="Room-4">Room-4</option>
+                     <option value="Room-5">Room-5</option>
+                  </select>
+               </div>
+               <button type="submit" class="btn">Join Chat</button>
+            </form>
+         </main>
+         <footer style="margin-top: 25px">
+            <div style="text-align: center" class="credit">
+               &copy; Adnan al-emran
+            </div>
+         </footer>
       </div>
-  </body>
-  </html>
+   </body>
+</html>

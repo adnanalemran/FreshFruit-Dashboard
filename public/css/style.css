@@ -102,6 +102,7 @@ a {
    max-height: 500px;
    overflow-y: scroll;
    background: #34495e;
+   min-height: 68vh;
 }
 
 .chat-messages .message {
@@ -219,31 +220,44 @@ input:focus {
    }
 }
 
+@media only screen and (max-width: 426px) {
+   .join-main .btn {
+      width: 46%;
+      padding: 8px;
+   }
+}
 
-*::-webkit-scrollbar-track {
-   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-   background-color: #323244;
-   border-radius: 10px;
- }
- 
- *::-webkit-scrollbar {
-   width: 7px;
-   background-color: #323244;
- }
- 
- *::-webkit-scrollbar-thumb {
-   border-radius: 10px;
-   background-color: #fff;
-   background-image: -webkit-gradient(
-     linear,
-     40% 0%,
-     75% 84%,
-     from(#4f46e5),
-     to(#4f46e5),
-     color-stop(0.6, #776ffd)
-   );
- }
- 
- html {
-   scroll-behavior: smooth;
- }
+@media only screen and (max-width: 1138px) {
+   .chat-form-container input[type='text'] {
+      width: 60%;
+   }
+}
+
+@media only screen and (max-width: 464px) {
+   .chat-form-container input[type='text'] {
+      width: 100%;
+   }
+}
+
+.send-button {
+   cursor: pointer;
+   padding: 10px 30px;
+   border: none;
+   border-radius: 5px;
+   background: #b1d8eb;
+   color: #3f5163;
+   border: none;
+   border-radius: 25px;
+   font-size: 17px;
+   margin-left: 20px;
+}
+
+@media only screen and (max-width: 464px) {
+   .send-button {
+      margin-left: 0px;
+      margin-top: 10px;
+   }
+   .chat-messages {
+      min-height: 65vh;
+   }
+}
