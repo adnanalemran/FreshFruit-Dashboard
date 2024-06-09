@@ -1,19 +1,22 @@
 {
-  "name": "on-chat-application",
+  "name": "ChatApplication",
   "version": "1.0.0",
-  "description": "A real-time chat application",
-  "main": "api/app.js",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "start": "node api/app.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
+  "keywords": [],
+  "author": "Adnan al-Emran",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "moment": "^2.29.1",
+    "moment-timezone": "^0.5.45",
     "socket.io": "^4.1.1"
   },
   "engines": {
     "node": ">=10.0.0"
-  },
-  "author": "Adnan al-Emran",
-  "license": "ISC"
+  }
 }

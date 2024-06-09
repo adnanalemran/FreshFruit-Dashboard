@@ -18,7 +18,7 @@ const io = socketIo(server);
 // set static file
 app.use(express.static(path.join(__dirname, 'public')));
 
-const botName = 'onChat Bot';
+const botName = 'ChatApp Bot';
 
 // run when client connects
 io.on('connection', (socket) => {
@@ -28,7 +28,7 @@ io.on('connection', (socket) => {
       socket.join(user.room);
 
       // welcome current user
-      socket.emit('message', formatMessage(botName, 'Welcome to onChat!'));
+      socket.emit('message', formatMessage(botName, 'Welcome to ChatApp!'));
 
       // broadcast when a user connects
       socket.broadcast
