@@ -16,7 +16,12 @@ const AddProduct = () => {
         image: null,
     });
 
-    const [fileError, setFileError] = useState<string | null>(null);
+    const [errors, setErrors] = useState({
+        name: "",
+        price: "",
+        description: "",
+        image: "",
+    });
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { id, value, files } = e.target as HTMLInputElement;
@@ -26,9 +31,22 @@ const AddProduct = () => {
             [id]: id === "image" ? (files && files[0]) || null : value,
         }));
 
-        if (id === "image" && files && files.length > 0) {
-            setFileError(null);
-        }
+        // Clear errors when input changes
+        setErrors((prevErrors) => ({ ...prevErrors, [id]: "" }));
+    };
+
+    const validateForm = () => {
+        const newErrors = {
+            name: formData.name.trim() === "" ? "Product name is required" : "",
+            price: formData.price.trim() === "" ? "Product price is required" : "",
+            description: formData.description.trim() === "" ? "Product description is required" : "",
+            image: !formData.image ? "Product image is required" : "",
+        };
+
+        setErrors(newErrors);
+
+        // Return false if any error exists
+        return !Object.values(newErrors).some((error) => error !== "");
     };
 
     const resetForm = () => {
@@ -39,7 +57,12 @@ const AddProduct = () => {
             status: 1,
             image: null,
         });
-        setFileError(null);
+        setErrors({
+            name: "",
+            price: "",
+            description: "",
+            image: "",
+        });
     };
 
     const { mutate, status } = useMutation({
@@ -76,11 +99,8 @@ const AddProduct = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (!formData.image) {
-            setFileError("Please select a file.");
+        if (!validateForm()) {
             return;
-        } else {
-            setFileError(null);
         }
 
         const data = new FormData();
@@ -114,8 +134,10 @@ const AddProduct = () => {
                                 onChange={handleInputChange}
                                 type="text"
                                 placeholder="Enter product name"
-                                className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                className={`w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary ${errors.name ? "border-red-500" : ""
+                                    }`}
                             />
+                            {errors.name && <p className="text-red-500">{errors.name}</p>}
                         </div>
 
                         {/* Product Price */}
@@ -129,8 +151,10 @@ const AddProduct = () => {
                                 onChange={handleInputChange}
                                 type="number"
                                 placeholder="Enter product price"
-                                className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                className={`w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary ${errors.price ? "border-red-500" : ""
+                                    }`}
                             />
+                            {errors.price && <p className="text-red-500">{errors.price}</p>}
                         </div>
 
                         {/* Product Description */}
@@ -143,8 +167,10 @@ const AddProduct = () => {
                                 value={formData.description}
                                 onChange={handleInputChange}
                                 placeholder="Enter product description"
-                                className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                className={`w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary ${errors.description ? "border-red-500" : ""
+                                    }`}
                             />
+                            {errors.description && <p className="text-red-500">{errors.description}</p>}
                         </div>
 
                         {/* Product Image */}
@@ -157,15 +183,17 @@ const AddProduct = () => {
                                 type="file"
                                 onChange={handleInputChange}
                                 accept="image/*"
-                                className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                className={`w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary ${errors.image ? "border-red-500" : ""
+                                    }`}
                             />
-                            {fileError && <p className="text-red-500">{fileError}</p>}
+                            {errors.image && <p className="text-red-500">{errors.image}</p>}
                         </div>
 
                         {/* Submit Button */}
                         <button
                             type="submit"
                             className="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90"
+                            disabled={status === "pending"}
                         >
                             {status === "pending" ? "Submitting..." : "Add Product"}
                         </button>

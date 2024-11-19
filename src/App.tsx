@@ -7,7 +7,7 @@ import SignIn from './pages/Authentication/SignIn';
 import SignUp from './pages/Authentication/SignUp';
 
 import Chart from './pages/Chart';
-import ECommerce from './pages/Dashboard/ECommerce';
+import Greetings from './pages/Dashboard/ECommerce';
 
 import FormLayout from './pages/Form/FormLayout';
 import Profile from './pages/Profile';
@@ -42,8 +42,8 @@ function App() {
           index
           element={
             <>
-              <PageTitle title="eCommerce Dashboard | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <ECommerce />
+              <PageTitle title="Greetings Dashboard | FreshFruit - Tailwind CSS Admin Dashboard Template" />
+              <Greetings />
             </>
           }
         />
@@ -52,7 +52,7 @@ function App() {
           path="/profile"
           element={
             <>
-              <PageTitle title="Profile | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Profile | FreshFruit - Tailwind CSS Admin Dashboard Template" />
               <Profile />
             </>
           }
@@ -61,7 +61,7 @@ function App() {
           path="/product/list"
           element={
             <>
-              <PageTitle title="Product list  | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Product list  | FreshFruit - Tailwind CSS Admin Dashboard Template" />
               <ProductList />
             </>
           }
@@ -70,7 +70,7 @@ function App() {
           path="/product/add"
           element={
             <>
-              <PageTitle title="Product list  | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Product list  | FreshFruit - Tailwind CSS Admin Dashboard Template" />
               <AddProduct />
             </>
           }
@@ -78,7 +78,7 @@ function App() {
           path="/product/DeleteProductList"
           element={
             <>
-              <PageTitle title="Product list  | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Product list  | FreshFruit - Tailwind CSS Admin Dashboard Template" />
               <DeleteProductList />
             </>
           }
@@ -87,7 +87,7 @@ function App() {
           path="/order-list"
           element={
             <>
-              <PageTitle title="Product list  | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Product list  | FreshFruit - Tailwind CSS Admin Dashboard Template" />
               <OrderList />
             </>
           }
@@ -96,7 +96,7 @@ function App() {
           path="/forms/form-layout"
           element={
             <>
-              <PageTitle title="Form Layout | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Form Layout | FreshFruit - Tailwind CSS Admin Dashboard Template" />
               <FormLayout />
             </>
           }
@@ -105,7 +105,7 @@ function App() {
           path="/tables"
           element={
             <>
-              <PageTitle title="Tables | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Tables | FreshFruit - Tailwind CSS Admin Dashboard Template" />
               <Tables />
             </>
           }
@@ -114,7 +114,7 @@ function App() {
           path="/settings"
           element={
             <>
-              <PageTitle title="Settings | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Settings | FreshFruit - Tailwind CSS Admin Dashboard Template" />
               <Settings />
             </>
           }
@@ -123,7 +123,7 @@ function App() {
           path="/chart"
           element={
             <>
-              <PageTitle title="Basic Chart | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Basic Chart | FreshFruit - Tailwind CSS Admin Dashboard Template" />
               <Chart />
             </>
           }
@@ -132,7 +132,7 @@ function App() {
           path="/ui/alerts"
           element={
             <>
-              <PageTitle title="Alerts | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Alerts | FreshFruit - Tailwind CSS Admin Dashboard Template" />
               <Alerts />
             </>
           }
@@ -141,7 +141,7 @@ function App() {
           path="/ui/buttons"
           element={
             <>
-              <PageTitle title="Buttons | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Buttons | FreshFruit - Tailwind CSS Admin Dashboard Template" />
               <Buttons />
             </>
           }
@@ -150,7 +150,7 @@ function App() {
           path="/auth/signin"
           element={
             <>
-              <PageTitle title="Signin | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Signin | FreshFruit - Tailwind CSS Admin Dashboard Template" />
               <SignIn />
             </>
           }
@@ -159,7 +159,7 @@ function App() {
           path="/auth/signup"
           element={
             <>
-              <PageTitle title="Signup | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Signup | FreshFruit - Tailwind CSS Admin Dashboard Template" />
               <SignUp />
             </>
           }
