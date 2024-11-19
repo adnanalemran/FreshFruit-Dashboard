@@ -1,5 +1,5 @@
 // Development URL
-export const ImageUrl = "http://localhost:8000/Images/";
+// export const ImageUrl = "http://localhost:8000/Images/";
 
 // Production URL
-// export const ImageUrl = 'https://bestthaideal.elegantinternational.site/public/Images/'
+export const ImageUrl = 'https://test.hrbee.xyz/public/images/';
